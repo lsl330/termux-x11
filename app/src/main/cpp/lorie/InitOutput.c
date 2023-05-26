@@ -299,7 +299,7 @@ lorieRRScreenSetSize(ScreenPtr pScreen, CARD16 width, CARD16 height, CARD32 mmWi
     if (width != pvfb->width || height != pvfb->height) {
         SetRootClip(pScreen, ROOT_CLIP_NONE);
         DamageEmpty(lorieScreen.pDamage);
-        pScreen->ResizeWindow(pScreen->root, 300, 0, width+300, height, NULL);
+        pScreen->ResizeWindow(pScreen->root, 0, 0, width, height, NULL);
 
         if (pvfb->buf) {
             AHardwareBuffer_release(pvfb->buf);
@@ -454,7 +454,7 @@ lorieScreenInit(ScreenPtr pScreen, unused int argc, unused char **argv) {
 void lorieChangeWindow(struct ANativeWindow* win) {
     ScreenPtr pScreen = pScreenPtr;
     RegionRec reg;
-    BoxRec box = { .x1 = 300, .y1 = 0, .x2 = pScreen->root->drawable.width+300, .y2 = pScreen->root->drawable.height};
+    BoxRec box = { .x1 = 0, .y1 = 0, .x2 = pScreen->root->drawable.width, .y2 = pScreen->root->drawable.height};
     pvfb->win = win;
     renderer_set_window(win);
     renderer_set_buffer(pvfb->buf);
