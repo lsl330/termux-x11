@@ -299,7 +299,7 @@ lorieRRScreenSetSize(ScreenPtr pScreen, CARD16 width, CARD16 height, CARD32 mmWi
     if (width != pvfb->width || height != pvfb->height) {
         SetRootClip(pScreen, ROOT_CLIP_NONE);
         DamageEmpty(lorieScreen.pDamage);
-        pScreen->ResizeWindow(pScreen->root, 300, 0, width, height, NULL);
+        pScreen->ResizeWindow(pScreen->root, 300, 0, width+300, height, NULL);
 
         if (pvfb->buf) {
             AHardwareBuffer_release(pvfb->buf);
