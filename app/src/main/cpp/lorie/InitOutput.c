@@ -454,7 +454,7 @@ lorieScreenInit(ScreenPtr pScreen, unused int argc, unused char **argv) {
 void lorieChangeWindow(struct ANativeWindow* win) {
     ScreenPtr pScreen = pScreenPtr;
     RegionRec reg;
-    BoxRec box = { .x1 = 0, .y1 = 0, .x2 = pScreen->root->drawable.width, .y2 = pScreen->root->drawable.height};
+    BoxRec box = { .x1 = 300, .y1 = 0, .x2 = pScreen->root->drawable.width+300, .y2 = pScreen->root->drawable.height};
     pvfb->win = win;
     renderer_set_window(win);
     renderer_set_buffer(pvfb->buf);
