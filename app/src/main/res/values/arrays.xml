@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="touchscreenInputModesEntries">
-        <item>Trackpad</item>
-        <item>Simulated touchscreen</item>
-        <item>Touchscreen</item>
+        <item>触控板</item>
+        <item>模拟触摸屏</item>
+        <item>触摸屏</item>
     </string-array>
     <string-array name="touchscreenInputModesValues">
         <item>1</item>
@@ -11,10 +11,10 @@
         <item>3</item>
     </string-array>
     <string-array name="displayResolutionVariants">
-        <item>native</item>
-        <item>scaled</item>
-        <item>exact</item>
-        <item>custom</item>
+        <item>本机分辨率</item>
+        <item>按比例缩放</item>
+        <item>预设分辨率</item>
+        <item>自定义分辨率</item>
     </string-array>
     <string-array name="displayResolution">
         <item>320x200</item>
