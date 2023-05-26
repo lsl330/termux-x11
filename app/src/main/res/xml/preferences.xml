@@ -7,7 +7,7 @@
             android:key="displayResolutionMode"
             android:defaultValue="native"
             android:entries="@array/displayResolutionVariants"
-            android:entryValues="@array/displayResolutionVariants" />
+            android:entryValues="@array/displayResolutionValues" />
 
         <SeekBarPreference
             android:title="屏幕比例, %"
