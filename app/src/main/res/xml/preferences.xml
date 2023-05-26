@@ -3,7 +3,7 @@
     <PreferenceCategory android:key="output" android:title="输出">
 
         <ListPreference
-            android:title="分辨率模式"
+            android:title="显示模式"
             android:key="displayResolutionMode"
             android:defaultValue="native"
             android:entries="@array/displayResolutionVariants"
@@ -72,8 +72,8 @@
             android:entryValues="@array/touchscreenInputModesValues" />
 
         <SwitchPreferenceCompat
-            android:title="显示附加键位"
-            android:summary="以附加键位方式显示键盘"
+            android:title="显示额外键位"
+            android:summary="以额外键位方式显示键盘"
             android:defaultValue="true"
             android:key="showAdditionalKbd" />
 
