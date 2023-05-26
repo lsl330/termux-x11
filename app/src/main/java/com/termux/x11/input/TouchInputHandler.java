@@ -254,11 +254,6 @@ public class TouchInputHandler {
     private void resetTransformation() {
         float sx = (float) mRenderData.imageWidth / mRenderData.screenWidth;
         float sy = (float) mRenderData.imageHeight / mRenderData.screenHeight;
-        if (sx > sy) {
-            sx = sy;
-        } else {
-            sy = sx;
-        }
         mRenderData.transform.setScale(sx, sy);
     }
 
