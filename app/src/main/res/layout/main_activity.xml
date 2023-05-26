@@ -16,7 +16,7 @@
 		android:paddingRight="0dp"
 		android:paddingBottom="0dp">
 
-		<SurfaceView
+		<com.termux.x11.LorieView
 			android:id="@+id/lorieView"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
