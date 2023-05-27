@@ -36,11 +36,11 @@ public class LorieView extends SurfaceView {
                 int height = MeasureSpec.getSize(heightMeasureSpec);
                 //左右黑边
                 if(width*1f/height > ratio){
-                    heightMeasureSpec = MeasureSpec.makeMeasureSpec((int) (width/ratio), MeasureSpec.EXACTLY);
+                    widthMeasureSpec = MeasureSpec.makeMeasureSpec((int) (height*ratio), MeasureSpec.EXACTLY);
                 }
                 //上下黑边
                 else{
-                    widthMeasureSpec = MeasureSpec.makeMeasureSpec((int) (height*ratio), MeasureSpec.EXACTLY);
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec((int) (width/ratio), MeasureSpec.EXACTLY);
                 }
             }
         }catch (Exception e){
