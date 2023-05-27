@@ -28,7 +28,7 @@ public class LorieView extends SurfaceView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         try {
-//            SharedPreferences sp = getContext().getSharedPreferences("com.eltechs.ed.CONTAINER_CONFIG_0", Context.MODE_PRIVATE);
+
             SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
             boolean shouldResize = sp.getBoolean("should_full_screen_with_ratio", true); //full_screen_with_ratio是字符串类型了
 
