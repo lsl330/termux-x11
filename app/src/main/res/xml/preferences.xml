@@ -2,11 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:key="output" android:title="输出">
 
-        <CheckBoxPreference
-        android:defaultValue="true"
-        android:summary="勾选按比例全屏，否则拉伸全屏（使用自定义或预设分辨率时）"
-        android:key="should_full_screen_with_ratio"
-        android:title="按比例全屏" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:summary="开启后按比例居中全屏，否则拉伸全屏（使用自定义或预设分辨率时）"
+            android:key="should_full_screen_with_ratio"
+            android:title="按比例居中全屏" />
         
         <ListPreference
             android:title="显示模式"
