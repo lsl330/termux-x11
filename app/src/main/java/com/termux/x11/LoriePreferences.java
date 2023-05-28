@@ -107,7 +107,8 @@ public class LoriePreferences extends AppCompatActivity {
                 if (res != null && file.canWrite())
                     Files.write(file.toPath(),res.getBytes(StandardCharsets.UTF_8));
             } catch (IOException e) {
-
+                e.printStackTrace();
+            }
             super.onDetach();
         }
 
