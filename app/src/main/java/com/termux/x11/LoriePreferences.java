@@ -3,7 +3,7 @@ package com.termux.x11;
 import static android.Manifest.permission.WRITE_SECURE_SETTINGS;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import android.os.Environment;
-import org.apache.commons.io.FileUtils;
+import java.nio.file.Files;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -100,7 +100,7 @@ public class LoriePreferences extends AppCompatActivity {
             else if("custom".equals(mode))
                 res = sp.getString("displayResolutionCustom", "1280x1024");
             try {
-                File file = new File(Environment.getExternalStorageDirectory(), "Box64Droid/resolution.conf");
+                Files.write(file.toPath(),res.getBytes(StandardCharsets.UTF_8));
                 if (!file.exists())
                     file.createNewFile();
                 if (res != null && file.canWrite())
