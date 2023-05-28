@@ -101,14 +101,13 @@ public class LoriePreferences extends AppCompatActivity {
             else if("custom".equals(mode))
                 res = sp.getString("displayResolutionCustom", "1280x1024");
             try {
-                Files.write(file.toPath(),res.getBytes(StandardCharsets.UTF_8));
+                File file = new File(Environment.getExternalStorageDirectory(), "Box64Droid/resolution.conf");
                 if (!file.exists())
                     file.createNewFile();
                 if (res != null && file.canWrite())
-                    FileUtils.write(file, res, StandardCharsets.UTF_8, false);
+                    Files.write(file.toPath(),res.getBytes(StandardCharsets.UTF_8));
             } catch (IOException e) {
-                e.printStackTrace();
-            }
+
             super.onDetach();
         }
 
