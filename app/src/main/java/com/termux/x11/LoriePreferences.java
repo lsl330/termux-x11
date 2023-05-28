@@ -91,6 +91,7 @@ public class LoriePreferences extends AppCompatActivity {
         
         @Override
         public void onDetach() {
+            
     //        SharedPreferences sp = getContext().getSharedPreferences("com.eltechs.ed.CONTAINER_CONFIG_0", Context.MODE_PRIVATE);
             SharedPreferences sp = android.preference.PreferenceManager.getDefaultSharedPreferences(getContext());
             String res = null;
