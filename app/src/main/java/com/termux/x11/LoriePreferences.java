@@ -83,6 +83,28 @@ public class LoriePreferences extends AppCompatActivity {
         public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {
             addPreferencesFromResource(R.xml.preferences);
         }
+        
+        @Override
+        public void onDetach() {
+    //        SharedPreferences sp = getContext().getSharedPreferences("com.eltechs.ed.CONTAINER_CONFIG_0", Context.MODE_PRIVATE);
+            SharedPreferences sp = android.preference.PreferenceManager.getDefaultSharedPreferences(getContext());
+            String res = null;
+            String mode = sp.getString("displayResolutionMode", "native");
+            if ("exact".equals(mode))
+                res = sp.getString("displayResolutionExact", "1280x1024");
+            else if("custom".equals(mode))
+                res = sp.getString("displayResolutionCustom", "1280x1024");
+            try {
+                File file = new File(Environment.getExternalStorageDirectory(), "Box64Droid/resolution.conf");
+                if (!file.exists())
+                    file.createNewFile();
+                if (res != null && file.canWrite())
+                    FileUtils.write(file, res, StandardCharsets.UTF_8, false);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            super.onDetach();
+        }
 
         @SuppressWarnings("ConstantConditions")
         void updatePreferencesLayout() {
