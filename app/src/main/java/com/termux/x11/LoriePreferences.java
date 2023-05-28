@@ -2,6 +2,11 @@ package com.termux.x11;
 
 import static android.Manifest.permission.WRITE_SECURE_SETTINGS;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+import android.os.Environment;
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
